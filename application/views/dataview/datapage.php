@@ -97,7 +97,7 @@ $(document).ready(function(e){
   ?>
 </div>
 <?php
-  echo $breadcrumb_bootstrap_style;
+  
 
  echo'    
   <div class="container">

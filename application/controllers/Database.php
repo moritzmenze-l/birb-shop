@@ -18,36 +18,7 @@ class Database extends CI_Controller {
     else
      {    
 
-          // Load library breadcrumb
-		$this->load->library('breadcrumb');
-
-		// Add items
-		$breadcrumb_items = [
-			'Dashboard' => '/',
-			'Users' => 'users',
-			'Add' => 'users/add'
-		];
-
-		// Exemple : default style
-		//
-		// Add items
-		$this->breadcrumb->add_item($breadcrumb_items);
-		// Generate breadcrumb
-		$data['breadcrumb_default_style'] = $this->breadcrumb->generate();
-
-		// Exemple : Bootstrap style
-		//
-		// Custom style
-		$template = [
-			'tag_open' => '<ol class="breadcrumb">',
-			'crumb_open' => '<li class="breadcrumb-item">',
-			'crumb_active' => '<li class="breadcrumb-item active" aria-current="page">'
-		];
-		$this->breadcrumb->set_template($template);
-		// Add items
-		$this->breadcrumb->add_item($breadcrumb_items);
-		// Generate breadcrumb
-		$data['breadcrumb_bootstrap_style'] = $this->breadcrumb->generate();
+      
         
           $data["content"] = $this->Db_model->get_data();
           $this->load->library('template');
