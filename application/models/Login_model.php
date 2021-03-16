@@ -8,9 +8,9 @@ class Login_model extends CI_Model {
 
    public function check_user($data){
 
-       $this->db->where('User', $data['username']);
-       $this->db->where('Password', md5($data['password']));
-       $result = $this->db->get('User')->row();
+       $this->db->where('Benutzername', $data['username']);
+       $this->db->where('Passwort', md5($data['password']));
+       $result = $this->db->get('Admins')->row();
        return $result;
        
     }

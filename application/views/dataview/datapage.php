@@ -80,10 +80,10 @@ $(document).ready(function(e){
 
     echo '
  
-    <div class="card" id="entry'. $data_item['id'] .'" > 
+    <div class="card" id="entry'. $data_item['PID'] .'" > 
        
-           <div class="card-header" data-headline="'.$data_item["Gaeste"].'">
-           <h5>'.$data_item ["Gaeste"].$is_admin.'</h5>
+           <div class="card-header" data-headline="'.$data_item["Produkte"].'">
+           <h5>'.$data_item ["Produkte"].$is_admin.'</h5>
     
              
            </div>
@@ -104,14 +104,14 @@ $(document).ready(function(e){
   <form  id="myForm">
     <div class="form-group">
       <label for="exampleFormControlInput1 myForm">Name</label>
-      <input type="Name" class="form-control" id="updateheadline" placeholder="Max Mustermann" name="headline">
+      <input type="Name" class="form-control" id="updateheadline" placeholder="Produkt Name" name="headline">
     </div>
 
     <div class="form-group">
-      <label for="exampleFormControlTextarea1 myForm">Eintrag</label>
-      <input type="Eintrag" textarea class="form-control" id="updatecontent" rows="3" name="content"></textarea>
+      <label for="exampleFormControlTextarea1 myForm">Beschreibung</label>
+      <input type="Beschreibung" textarea class="form-control" id="updatecontent" rows="3" name="content"></textarea>
     </div>
-    <input type="hidden" id="updateid" name="id" value="" class="form-control">
+    <input type="hidden" id="updateid" name="PID" value="" class="form-control">
     <button id="submit" type="button" class="btn btn-primary">Submit</button>
   </form> 
   </div>
