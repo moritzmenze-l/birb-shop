@@ -27,7 +27,7 @@ class Login extends CI_Controller {
 
             }
             else{
-                $this->session->set_flashdata('flash_data');
+                $this->session->set_flashdata('flash_data', 'Passwort oder User falsch');
                 redirect('Login/view');
             }
         }
