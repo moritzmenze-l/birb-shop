@@ -39,7 +39,7 @@ class Login extends CI_Controller {
     public function logout() {
         $data = array('id_user', 'username');
         $this->session->unset_userdata($data);
-        redirect('Login/view');
+        redirect('data/datapage');
         }
        
 }
