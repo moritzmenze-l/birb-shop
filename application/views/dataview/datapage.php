@@ -80,7 +80,7 @@ $(document).ready(function(e){
 
     echo '
  
-    <div class="card" id="entry'. $data_item['PID'] .'" > 
+    <div class="card bg-secondary text-white"" id="entry'. $data_item['PID'] .'" >
        
            <div class="card-header" data-headline="'.$data_item["Name"].'">
            <h5>'.$data_item ["Name"].$is_admin.'</h5>
