@@ -82,13 +82,13 @@ $(document).ready(function(e){
  
     <div class="card" id="entry'. $data_item['PID'] .'" > 
        
-           <div class="card-header" data-headline="'.$data_item["Produkte"].'">
-           <h5>'.$data_item ["Produkte"].$is_admin.'</h5>
+           <div class="card-header" data-headline="'.$data_item["Name"].'">
+           <h5>'.$data_item ["Name"].$is_admin.'</h5>
     
              
            </div>
            <div class="card-body">
-             <p class="card-text" data-content="'.$data_item["Eintrag"].'">'.$data_item["Eintrag"].'</p>
+             <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
     
             </div>
           
