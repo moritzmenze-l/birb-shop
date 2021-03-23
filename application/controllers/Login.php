@@ -27,7 +27,7 @@ class Login extends CI_Controller {
 
             }
             else{
-                $this->session->set_flashdata('flash_data');
+                $this->session->set_flashdata('flash_data', 'Passwort oder User falsch');
                 redirect('Login/view');
             }
         }
@@ -39,7 +39,7 @@ class Login extends CI_Controller {
     public function logout() {
         $data = array('id_user', 'username');
         $this->session->unset_userdata($data);
-        redirect('Login/view');
+        redirect('data/datapage');
         }
        
 }

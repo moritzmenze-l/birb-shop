@@ -71,8 +71,10 @@ $(document).ready(function(e){
       $session = $this->session->userdata('id_user');
       if(!empty($session)){
         $is_admin = '
-        <div data-id=" '.$data_item['id'].' " class="trash float-right" style="cursor:pointer"><i class="fas fa-trash"></i></div>
-        <div data-id=" '.$data_item['id'].' " class="edit float-right" style="cursor:pointer"><i class="fas fa-edit"></i></div>';
+        <div data-id=" '.$data_item['PID'].' " class="trash float-right" style="cursor:pointer"><i class="fas fa-trash"></i></div>
+        <div data-id=" '.$data_item['PID'].' " class="edit float-right" style="cursor:pointer"><i class="fas fa-edit"></i></div>
+        <h6 class="card-subtitle mb-2 text-muted">'.$data_item["PID"].'</h6>
+        ';
       }
       else{
         $is_admin = '';
@@ -87,7 +89,8 @@ $(document).ready(function(e){
     
              
            </div>
-           <div class="card-body">
+          <div class="card-body">
+             
              <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
     
             </div>
@@ -98,24 +101,25 @@ $(document).ready(function(e){
 </div>
 <?php
   
+  if(!empty($session)){
+    echo'    
+      <div class="container">
+      <form  id="myForm">
+        <div class="form-group">
+          <label for="exampleFormControlInput1 myForm">Name</label>
+          <input type="Name" class="form-control" id="updateheadline" placeholder="Produkt Name" name="headline">
+        </div>
 
- echo'    
-  <div class="container">
-  <form  id="myForm">
-    <div class="form-group">
-      <label for="exampleFormControlInput1 myForm">Name</label>
-      <input type="Name" class="form-control" id="updateheadline" placeholder="Produkt Name" name="headline">
-    </div>
-
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1 myForm">Beschreibung</label>
-      <input type="Beschreibung" textarea class="form-control" id="updatecontent" rows="3" name="content"></textarea>
-    </div>
-    <input type="hidden" id="updateid" name="PID" value="" class="form-control">
-    <button id="submit" type="button" class="btn btn-primary">Submit</button>
-  </form> 
-  </div>
-  ';
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1 myForm">Beschreibung</label>
+          <input type="Beschreibung" textarea class="form-control" id="updatecontent" rows="3" name="content"></textarea>
+        </div>
+        <input type="hidden" id="updateid" name="PID" value="" class="form-control">
+        <button id="submit" type="button" class="btn btn-primary">Submit</button>
+      </form> 
+      </div>
+      ';
+  }
 
   ?>
  </body>
