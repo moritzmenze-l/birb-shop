@@ -102,22 +102,24 @@ $(document).ready(function(e){
 <?php
   
   if(!empty($session)){
-    echo'    
-      <div class="container">
-      <form  id="myForm">
-        <div class="form-group">
-          <label for="exampleFormControlInput1 myForm">Name</label>
-          <input type="Name" class="form-control" id="updateheadline" placeholder="Produkt Name" name="headline">
-        </div>
+    echo' 
+       <div class="container">
+        <div class="card bg-dark text-white">
+         <form  id="myForm">
+          <div class="form-group">
+            <label for="exampleFormControlInput1 myForm">Name</label>
+            <input type="Name" class="form-control" id="updateheadline" placeholder="Produkt Name" name="headline">
+          </div>
 
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1 myForm">Beschreibung</label>
-          <input type="Beschreibung" textarea class="form-control" id="updatecontent" rows="3" name="content"></textarea>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1 myForm">Beschreibung</label>
+            <input type="Beschreibung" textarea class="form-control" id="updatecontent" rows="3" name="content"></textarea>
+          </div>
+          <input type="hidden" id="updateid" name="PID" value="" class="form-control">
+          <button id="submit" type="button" class="btn btn-primary">Submit</button>
+        </form> 
         </div>
-        <input type="hidden" id="updateid" name="PID" value="" class="form-control">
-        <button id="submit" type="button" class="btn btn-primary">Submit</button>
-      </form> 
-      </div>
+       </div>
       ';
   }
 
