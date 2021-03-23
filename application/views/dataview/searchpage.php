@@ -72,8 +72,10 @@ $(document).ready(function(e){
       $session = $this->session->userdata('id_user');
       if(!empty($session)){
         $is_admin = '
-        <div data-id=" '.$data_item['id'].' " class="trash float-right" style="cursor:pointer"><i class="fas fa-trash"></i></div>
-        <div data-id=" '.$data_item['id'].' " class="edit float-right" style="cursor:pointer"><i class="fas fa-edit"></i></div>';
+        <div data-id=" '.$data_item['PID'].' " class="trash float-right" style="cursor:pointer"><i class="fas fa-trash"></i></div>
+        <div data-id=" '.$data_item['PID'].' " class="edit float-right" style="cursor:pointer"><i class="fas fa-edit"></i></div>
+        <h6 class="card-subtitle mb-2 text-muted">'.$data_item["PID"].'</h6>
+        ';
       }
       else{
         $is_admin = '';
@@ -81,15 +83,15 @@ $(document).ready(function(e){
 
     echo '
  
-    <div class="card" id="entry'. $data_item['id'] .'" > 
+    <div class="card" id="entry'. $data_item['PID'] .'" > 
        
-           <div class="card-header" data-headline="'.$data_item["Gaeste"].'">
-           <h5>'.$data_item ["Gaeste"].$is_admin.'</h5>
+           <div class="card-header" data-headline="'.$data_item["Name"].'">
+           <h5>'.$data_item ["Name"].$is_admin.'</h5>
     
              
            </div>
            <div class="card-body">
-             <p class="card-text" data-content="'.$data_item["Eintrag"].'">'.$data_item["Eintrag"].'</p>
+             <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
     
             </div>
           
