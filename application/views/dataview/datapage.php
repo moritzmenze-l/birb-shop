@@ -44,7 +44,7 @@ $(document).ready(function(e){
           url: "<?php echo site_url('db/delete');?>",
           data:"id="+id,
           success: function (response) {
-          id = id.trim();
+          //id = id.trim();
           $("#entry"+id).fadeOut("slow");
           }
        ,})
