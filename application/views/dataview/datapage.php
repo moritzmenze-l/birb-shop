@@ -19,11 +19,13 @@ $(document).ready(function(e){
 
   $("#submit").click(function(){
   
-    if($("#updateid").val()!=""){
+    if($("#id").val()!=""){
        var func = "<?php echo site_url("db/update"); ?>";
+       console.log($("#id").val());
     }
     else{
        var func = "<?php echo site_url("db/create"); ?>";
+       console.log("test")
     }
 
    $.ajax({
@@ -44,7 +46,7 @@ $(document).ready(function(e){
           url: "<?php echo site_url('db/delete');?>",
           data:"id="+id,
           success: function (response) {
-          //id = id.trim();
+          id = id.trim();
           $("#entry"+id).fadeOut("slow");
           }
        ,})
@@ -57,9 +59,9 @@ $(document).ready(function(e){
           // for debug-console
           console.log($(this).parent().next().find("p").data("content"));
           // for debug-console
-          $("#updateheadline").val($(this).closest('.card-header').data("headline"));
-          $("#updatecontent").val($(this).parent().parent().next().find("p").data("content"));
-          $("#updateid").val(id);
+          $("#headline").val($(this).closest('.card-header').data("headline"));
+          $("#content").val($(this).parent().parent().next().find("p").data("content"));
+          $("#id").val(id);
      });
 
 });
@@ -108,14 +110,14 @@ $(document).ready(function(e){
          <form  id="myForm">
           <div class="form-group">
             <label for="exampleFormControlInput1 myForm">Name</label>
-            <input type="Name" class="form-control" id="updateheadline" placeholder="Produkt Name" name="headline">
+            <input type="Name" class="form-control" id="headline" placeholder="Produkt Name" name="headline">
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlTextarea1 myForm">Beschreibung</label>
-            <input type="Beschreibung" textarea class="form-control" id="updatecontent" rows="3" name="content"></textarea>
+            <input type="Beschreibung" textarea class="form-control" id="content" rows="3" name="content"></textarea>
           </div>
-          <input type="hidden" id="updateid" name="PID" value="" class="form-control">
+          <input type="hidden" id="id" name="PID" value="" class="form-control">
           <button id="submit" type="button" class="btn btn-primary">Submit</button>
         </form> 
         </div>
