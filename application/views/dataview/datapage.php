@@ -4,7 +4,7 @@
      <title>Datapage</title>
 </head>
 <body>
-     <h1>Datapage</h1>
+     <h1>Produkte</h1>
      <br>
      <br>
      
@@ -44,7 +44,7 @@ $(document).ready(function(e){
           url: "<?php echo site_url('db/delete');?>",
           data:"id="+id,
           success: function (response) {
-          id = id.trim();
+          //id = id.trim();
           $("#entry"+id).fadeOut("slow");
           }
        ,})

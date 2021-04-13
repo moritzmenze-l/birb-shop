@@ -10,10 +10,10 @@ class Search_model extends CI_Model {
         
         //$this->db->like('Titel',$suchwort);//WHERE'Titel'LIKE'%suchwort%
         
-        $array = array('Gaeste'=>$input, 'Eintrag' => $input);
+        $array = array('Name'=>$input, 'Beschreibung' => $input);
         $this->db->or_like($array);
         
-        $query = $this->db->get('Gaestebuch');
+        $query = $this->db->get('Produkte');
         return $query->result_array();
     }
 }
