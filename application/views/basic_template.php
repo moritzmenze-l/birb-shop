@@ -37,7 +37,12 @@ shrink-to-fit=no">
 
 
       <li class="nav-item">
-        <a class="nav-link" href="/data/datapage">Database</a>
+        <a class="nav-link" href="/">Produkte</a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="/data/warenkorb">Warenkorb</a>
       </li>
       
       

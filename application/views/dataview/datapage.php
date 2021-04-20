@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <title>Datapage</title>
+     <title>Produkte</title>
 </head>
 <body>
      <h1>Produkte</h1>
