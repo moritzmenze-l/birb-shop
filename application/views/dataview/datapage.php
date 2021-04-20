@@ -4,9 +4,10 @@
      <title>Produkte</title>
 </head>
 <body>
-     <h1>Produkte</h1>
      <br>
+     <center> <font color=32383E> <h1>Produkte</h1> </font> </center>
      <br>
+     
      
     
 
@@ -83,22 +84,26 @@ $(document).ready(function(e){
       }
 
     echo '
- 
-    <div class="card bg-dark text-white"" id="entry'. $data_item['PID'] .'" >
+    <div>
+     <div class="card bg-dark text-white"" id="entry'. $data_item['PID'] .'" >
        
-           <div class="card-header" data-headline="'.$data_item["Name"].'">
-           <h5>'.$data_item ["Name"].$is_admin.'</h5>
+            <div class="card-header" data-headline="'.$data_item["Name"].'">
+            <h5>'.$data_item ["Name"].$is_admin.'</h5>
     
              
-           </div>
-          <div class="card-body">
-             
-             <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
-    
             </div>
-          
+           <div class="card-body">
+             
+              <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
+    
+             </div>
+            
+     </div>
+      <div class="pt-3">
+      </div>
     </div>';
     }
+  
   ?>
 </div>
 <?php
@@ -106,7 +111,8 @@ $(document).ready(function(e){
   if(!empty($session)){
     echo' 
        <div class="container">
-        <div class="card bg-dark text-white">
+       
+        <div class="card px-4 pt-1 pb-3 bg-dark text-white">
          <form  id="myForm">
           <div class="form-group">
             <label for="exampleFormControlInput1 myForm">Name</label>
@@ -122,6 +128,7 @@ $(document).ready(function(e){
         </form> 
         </div>
        </div>
+       <div class="pt-3">
       ';
   }
 
