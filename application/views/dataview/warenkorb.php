@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <title>Produkte</title>
+     <title>Warenkorb</title>
 </head>
 <body>
+     <h1>Warenkorb</h1>
      <br>
-     <center> <font color=32383E> <h1>Produkte</h1> </font> </center>
      <br>
-     
      
     
 
@@ -70,7 +69,7 @@ $(document).ready(function(e){
 </script>
 <div class="container">
  <?php   
-    foreach ($content as $data_item){
+    foreach ($basket as $data_item){
       $session = $this->session->userdata('id_user');
       if(!empty($session)){
         $is_admin = '
@@ -80,37 +79,26 @@ $(document).ready(function(e){
         ';
       }
       else{
-        $is_admin = '
-          <form action="data/warenkorb" method="post" class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Kaufen</button>
-          </form>
-        ';
+        $is_admin = '';
       }
 
     echo '
-    <div>
-     <div class="card bg-dark text-white"" id="entry'. $data_item['PID'] .'" >
+ 
+    <div class="card bg-dark text-white"" id="entry'. $data_item['PID'] .'" >
        
-            <div class="card-header" data-headline="'.$data_item["Name"].'">
-            <h5>'.$data_item ["Name"].$is_admin.'</h5>
+           <div class="card-header" data-headline="'.$data_item["Name"].'">
+           <h5>'.$data_item ["Name"].$is_admin.'</h5>
     
              
-            </div>
-           <div class="card-body">
-           <div class="d-flex justify-content-center">
-              <img src="'.$data_item["Bild"].'" class="rounded" alt="Produktbild" style="width:50%">
-            </div>
-              <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
-              <p class="card-text" data-content="'.$data_item["Preis"].'">'.$data_item["Preis"].'</p>
+           </div>
+          <div class="card-body">
              
-             </div>
-            
-     </div>
-     <div class="pt-3">
-     </div>
+             <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
+    
+            </div>
+          
     </div>';
     }
-  
   ?>
 </div>
 <?php
@@ -118,8 +106,7 @@ $(document).ready(function(e){
   if(!empty($session)){
     echo' 
        <div class="container">
-       
-        <div class="card px-4 pt-1 pb-3 bg-dark text-white">
+        <div class="card bg-dark text-white">
          <form  id="myForm">
           <div class="form-group">
             <label for="exampleFormControlInput1 myForm">Name</label>
@@ -134,8 +121,6 @@ $(document).ready(function(e){
           <button id="submit" type="button" class="btn btn-primary">Submit</button>
         </form> 
         </div>
-       </div>
-       <div class="pt-3">
        </div>
       ';
   }

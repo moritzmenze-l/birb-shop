@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <title>Datapage</title>
+     <title>Produktsuche</title>
 </head>
 <body>
+     <h1>Produkte</h1>
      <br>
      <center> <font color=32383E> <h1>Suchergebnisse</h1> </font> </center>
      <br>
@@ -132,7 +133,26 @@ $(document).ready(function(e){
    <div class="pt-3"> 
    </div>
   ';
+  if(!empty($session)){
 
+    echo'    
+      <div class="container">
+      <form  id="myForm">
+        <div class="form-group">
+          <label for="exampleFormControlInput1 myForm">Name</label>
+          <input type="Name" class="form-control" id="updateheadline" placeholder="Max Mustermann" name="headline">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1 myForm">Eintrag</label>
+          <input type="Eintrag" textarea class="form-control" id="updatecontent" rows="3" name="content"></textarea>
+        </div>
+        <input type="hidden" id="updateid" name="id" value="" class="form-control">
+        <button id="submit" type="button" class="btn btn-primary">Submit</button>
+      </form> 
+      </div>
+      ';
+  }
   ?>
  </body>
 </html>

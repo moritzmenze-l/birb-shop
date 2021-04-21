@@ -27,5 +27,5 @@ public function update($id, $headline, $content)
     $this->db->update('Produkte');
    }
       
-   #Hallo
+   
 }
