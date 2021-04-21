@@ -37,7 +37,7 @@ shrink-to-fit=no">
 
 
       <li class="nav-item">
-        <a class="nav-link" href="/data/datapage">Database</a>
+        <a class="nav-link" href="/data/datapage">Produkte</a>
       </li>
       
       
