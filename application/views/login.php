@@ -59,7 +59,7 @@
       #formContent {
         -webkit-border-radius: 10px 10px 10px 10px;
         border-radius: 10px 10px 10px 10px;
-        background: #fff;
+        background: #343A40;
         padding: 30px;
         width: 90%;
         max-width: 450px;
@@ -278,14 +278,15 @@
 
     </style>
   </head>
-  <body>
+  <body style="background-color:grey;">
+  
   <div class="wrapper fadeInDown">
     <div id="formContent">
     <!-- Tabs Titles -->
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="https://www.kindpng.com/picc/m/200-2005246_19-security-padlock-icon-png-images-lock-icon.png" id="icon" alt="User Icon" />
+      <img src="/bilder/Schloss2.png" id="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->

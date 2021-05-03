@@ -6,7 +6,9 @@
 <body>
      <h1>Produkte</h1>
      <br>
+     <center> <font color=32383E> <h1>Suchergebnisse</h1> </font> </center>
      <br>
+   
      
     
 
@@ -81,25 +83,56 @@ $(document).ready(function(e){
         $is_admin = '';
       }
 
-    echo '
- 
-    <div class="card" id="entry'. $data_item['PID'] .'" > 
-       
-           <div class="card-header" data-headline="'.$data_item["Name"].'">
-           <h5>'.$data_item ["Name"].$is_admin.'</h5>
-    
-             
-           </div>
-           <div class="card-body">
-             <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
-    
-            </div>
-          
-    </div>';
+      echo '
+      <div>
+       <div class="card bg-dark text-white"" id="entry'. $data_item['PID'] .'" >
+         
+              <div class="card-header" data-headline="'.$data_item["Name"].'">
+              <h5>'.$data_item ["Name"].$is_admin.'</h5>
+      
+               
+              </div>
+             <div class="card-body">
+             <div class="d-flex justify-content-center">
+                <img src="'.$data_item["Bild"].'" class="rounded" alt="Produktbild" style="width:50%">
+              </div>
+                <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
+                <p class="card-text" data-content="'.$data_item["Preis"].'">'.$data_item["Preis"].'</p>
+               
+               </div>
+              
+       </div>
+       <div class="pt-3">
+       </div>
+      </div>';
     }
   ?>
 </div>
 <?php
+  
+
+ echo' 
+    
+  <div class="container">
+   <div class="card px-4 pt-1 pb-3 bg-dark text-white">
+    <form  id="myForm">
+      <div class="form-group">
+        <label for="exampleFormControlInput1 myForm">Name</label>
+        <input type="Name" class="form-control" id="updateheadline" placeholder="Max Mustermann" name="headline">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1 myForm">Eintrag</label>
+        <input type="Eintrag" textarea class="form-control" id="updatecontent" rows="3" name="content"></textarea>
+      </div>
+      <input type="hidden" id="updateid" name="id" value="" class="form-control">
+      <button id="submit" type="button" class="btn btn-primary">Submit</button>
+    </form> 
+   </div>
+   </div>
+   <div class="pt-3"> 
+   </div>
+  ';
   if(!empty($session)){
 
     echo'    

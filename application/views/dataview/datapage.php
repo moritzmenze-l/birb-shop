@@ -98,14 +98,17 @@ $(document).ready(function(e){
              
             </div>
            <div class="card-body">
-             
+           <div class="d-flex justify-content-center">
+              <img src="'.$data_item["Bild"].'" class="rounded" alt="Produktbild" style="width:50%">
+            </div>
               <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
-    
+              <p class="card-text" data-content="'.$data_item["Preis"].'">'.$data_item["Preis"].'</p>
+             
              </div>
             
      </div>
-      <div class="pt-3">
-      </div>
+     <div class="pt-3">
+     </div>
     </div>';
     }
   
@@ -134,6 +137,7 @@ $(document).ready(function(e){
         </div>
        </div>
        <div class="pt-3">
+       </div>
       ';
   }
 
