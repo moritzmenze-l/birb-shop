@@ -53,6 +53,7 @@ $route['default_controller'] = 'database/mydata';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['data'] = 'database/mydata';
+$route['warenkorb'] = 'warenkorb';
 $route['data/(:any)'] = 'database/mydata/$1';
 $route['(:any)'] = 'Pages/view/$1';
 $route['db/(:any)'] = 'database/$1';

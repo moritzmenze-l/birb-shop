@@ -81,7 +81,8 @@ $(document).ready(function(e){
       }
       else{
         $is_admin = '
-          <form action="data/warenkorb" method="post" class="form-inline my-2 my-lg-0">
+          <form action="/warenkorb/add" method="post" class="form-inline my-2 my-lg-0">
+          <input name="pid" type="hidden" value="'.$data_item['PID'].'">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Kaufen</button>
           </form>
         ';
