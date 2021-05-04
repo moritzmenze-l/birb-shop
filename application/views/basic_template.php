@@ -44,6 +44,14 @@ shrink-to-fit=no">
       <li class="nav-item">
         <a class="nav-link" href="/data/warenkorb">Warenkorb</a>
       </li>
+
+      <li class="nav-item">
+          <?php
+          $session = $this->session->userdata('id_user');
+          if(!empty($session)){ ?>
+            <a class="nav-link" href="/data/kaeufe">Käufe</a>
+          <?php } ?>
+      </li>
       
       
       <li class="nav-item">
@@ -56,6 +64,9 @@ shrink-to-fit=no">
             <a class="nav-link" href="/login/view">Login</a>
           <?php } ?>
       </li>
+
+    
+
       
     </ul>
     <form action="<?= site_url('Search/search_input') ?>" method="post" class="form-inline my-2 my-lg-0">

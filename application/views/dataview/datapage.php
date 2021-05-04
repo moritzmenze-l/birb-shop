@@ -81,9 +81,11 @@ $(document).ready(function(e){
       }
       else{
         $is_admin = '
+        <div class="d-flex flex-row-reverse">
           <form action="data/warenkorb" method="post" class="form-inline my-2 my-lg-0">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Kaufen</button>
           </form>
+        </div>
         ';
       }
 

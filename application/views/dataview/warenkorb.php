@@ -4,8 +4,8 @@
      <title>Warenkorb</title>
 </head>
 <body>
-     <h1>Warenkorb</h1>
      <br>
+     <center> <font color=32383E> <h1>Warenkorb</h1> </font> </center>
      <br>
      
     
