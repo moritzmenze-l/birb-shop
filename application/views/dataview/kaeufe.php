@@ -10,7 +10,7 @@
    
      
 <script>
-
+  var func = "<?php echo site_url("kaufen/get_data"); ?>";
 </script>
 
 <?php   
