@@ -4,6 +4,7 @@ class Warenkorb extends CI_Controller{
     
     function __construct(){
         parent::__construct();//calls the superconstructor 
+        $this->load->model('warenkorb_model');
         //$_SESSION['warenkorb'] = array();
         
     }
@@ -12,7 +13,13 @@ class Warenkorb extends CI_Controller{
         if (!isset($_SESSION['warenkorb'])){
             $_SESSION['warenkorb'] = array();
         }
-        $data['contents'] = $_SESSION['warenkorb'];
+        $data['contents'] = array();
+        foreach($_SESSION['warenkorb'] as $item){
+            $result = $this->warenkorb_model->get_produkt_info($item);
+            array_push($data['contents'], $result);
+
+        }
+        //print_r($_SESSION['warenkorb']);
         //print_r($data['contents']);
         $this->load->library('template');
         $this->template->set('title', "Warenkorb");
@@ -38,15 +45,18 @@ class Warenkorb extends CI_Controller{
         if (isset($_SESSION['warenkorb'])){
             $_SESSION['warenkorb'] = array();
         }
+        redirect("warenkorb");
     }
 
     function remove(){
-        if (isset($_SESSION['warenkorb'])){
-            $_SESSION['warenkorb'] = array();
+        
+        print_r($_SESSION['warenkorb']);
+        print_r($_POST["pid"]);
+
+        if (($key = array_search($_POST["pid"], $_SESSION['warenkorb'])) !== false) {
+            unset($_SESSION['warenkorb'][$key]);
         }
         
-        echo $_POST["pid"];
-        array_push($_SESSION['warenkorb'], $_POST["pid"]);
-        //redirect("/");
+        redirect("warenkorb");
     }
 }
