@@ -23,7 +23,7 @@ class Login extends CI_Controller {
                 );
 
                 $this->session->set_userdata($data);
-                redirect('data/datapage'); // eure Datenseite !!!!!!!!!!!!!!!
+                redirect(''); // eure Datenseite !!!!!!!!!!!!!!!
 
             }
             else{
@@ -39,7 +39,7 @@ class Login extends CI_Controller {
     public function logout() {
         $data = array('id_user', 'username');
         $this->session->unset_userdata($data);
-        redirect('data/datapage');
+        redirect('');
         }
        
 }

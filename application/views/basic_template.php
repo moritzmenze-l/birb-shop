@@ -42,7 +42,7 @@ shrink-to-fit=no">
 
 
       <li class="nav-item">
-        <a class="nav-link" href="/data/warenkorb">Warenkorb</a>
+        <a class="nav-link" href="/warenkorb">Warenkorb</a>
       </li>
 
       <li class="nav-item">

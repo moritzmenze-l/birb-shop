@@ -4,11 +4,8 @@ class Database extends CI_Controller {
         parent::__construct(); // calls the super constructor
         $this->load->model('Db_model');
         }
-       
-    public function index()
-    {
-        
-    }
+    
+
     public function mydata($page = "datapage")
  {
     if ( ! file_exists(APPPATH.'views/dataview/'.$page.'.php'))
