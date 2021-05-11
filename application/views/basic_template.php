@@ -42,14 +42,13 @@ shrink-to-fit=no">
 
 
       <li class="nav-item">
-        <a class="nav-link" href="/warenkorb">Warenkorb</a>
-      </li>
-
-      <li class="nav-item">
           <?php
           $session = $this->session->userdata('id_user');
           if(!empty($session)){ ?>
             <a class="nav-link" href="/data/kaeufe">Käufe</a>
+          <?php }
+          else{?>
+            <a class="nav-link" href="/warenkorb">Warenkorb</a>
           <?php } ?>
       </li>
       

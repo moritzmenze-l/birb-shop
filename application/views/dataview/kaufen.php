@@ -60,7 +60,7 @@ $("#kaufen").click(function(){
     </div>
 
       <input type="hidden" id="updateid" name="id" value="" class="form-control">
-      <button id="kaufen" type="button" class="btn btn-primary">Kauf abschließen</button>
+      <button id="kaufen" type="button" class="btn btn-success">Kauf abschließen</button>
     </form> 
    </div>
    </div>
