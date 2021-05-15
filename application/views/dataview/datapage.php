@@ -104,7 +104,7 @@ $(document).ready(function(e){
               <img src="'.$data_item["Bild"].'" class="rounded" alt="Produktbild" style="width:50%">
             </div>
               <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
-              <p class="card-text" data-content="'.$data_item["Preis"].'">'.$data_item["Preis"].'</p>
+              <p class="card-text" data-preis="'.$data_item["Preis"].'">'.$data_item["Preis"].'</p>
              
              </div>
             
@@ -133,6 +133,12 @@ $(document).ready(function(e){
             <label for="exampleFormControlTextarea1 myForm">Beschreibung</label>
             <input type="Beschreibung" textarea class="form-control" id="content" rows="3" name="content"></textarea>
           </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1 myForm">Preis</label>
+            <input type="Preis" textarea class="form-control" id="preis" rows="3" name="preis"></textarea>
+          </div>
+
           <input type="hidden" id="id" name="PID" value="" class="form-control">
           <button id="submit" type="button" class="btn btn-primary">Submit</button>
         </form> 
