@@ -5,7 +5,6 @@ class Warenkorb extends CI_Controller{
     function __construct(){
         parent::__construct();//calls the superconstructor 
         $this->load->model('warenkorb_model');
-        //$_SESSION['warenkorb'] = array();
         
     }
 
@@ -19,8 +18,7 @@ class Warenkorb extends CI_Controller{
             array_push($data['contents'], $result);
 
         }
-        //print_r($_SESSION['warenkorb']);
-        //print_r($data['contents']);
+
         $this->load->library('template');
         $this->template->set('title', "Warenkorb");
         $this->template->load('basic_template','dataview/newWarenkorb',$data);
