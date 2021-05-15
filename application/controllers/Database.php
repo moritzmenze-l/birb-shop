@@ -50,6 +50,6 @@ public function delete(){
       $id=$this->input->post('id');
      $this->Db_model->update($id,$headline,$content);
     }
-         
+    
    
 }

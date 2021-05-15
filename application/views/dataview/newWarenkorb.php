@@ -8,10 +8,16 @@
      <center> <font color=32383E> <h1>Warenkorb</h1> </font> </center>
      <br>
 
+     
+
+<form action="/data/kaufen" method="post" class="form-inline my-2 my-lg-0">
+<input name="pid" type="hidden" value="'.$data_item['PID'].'">
+  <button id="kaufen" type="submit" class="btn btn-success my-2 my-sm-0">Kauf bestätigen</button>
+</form>
 
 <form action="/warenkorb/del" method="post" class="form-inline my-2 my-lg-0">
 <input name="pid" type="hidden" value="'.$data_item['PID'].'">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Warenkorb löschen</button>
+  <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Warenkorb löschen</button>
 </form>
 
 <br>
