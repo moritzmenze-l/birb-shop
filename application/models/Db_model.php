@@ -7,9 +7,10 @@ class Db_model extends CI_Model {
     $query = $this->db->get('Produkte'); // Produces: SELECT * FROM mytable
     return $query->result_array();
  }
- public function create($headline, $content){
+ public function create($headline, $content, $preis){
    $this->db->set('Name', $headline);
    $this->db->set('Beschreibung', $content);
+   $this->db->set('Preis', $preis);
    $this->db->insert('Produkte');
    return $this->db->insert_id();
    }

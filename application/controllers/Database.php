@@ -33,7 +33,8 @@ class Database extends CI_Controller {
  public function create(){
     $headline = $this->input->post('headline');
     $content = $this->input->post('content');
-    $id = $this->Db_model->create($headline,$content);
+    $preis = $this->input->post('preis');
+    $id = $this->Db_model->create($headline,$content,$preis);
     echo $id;
     }
 
