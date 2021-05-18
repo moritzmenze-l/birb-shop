@@ -69,8 +69,8 @@ shrink-to-fit=no">
       
     </ul>
     <form action="<?= site_url('Search/search_input') ?>" method="post" class="form-inline my-2 my-lg-0">
-      <input name="input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input name="input" class="form-control mr-sm-2" type="search" placeholder="Produkte suchen" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Suchen</button>
     </form>
   </div>
 </nav>

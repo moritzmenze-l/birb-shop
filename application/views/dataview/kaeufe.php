@@ -14,7 +14,8 @@
 <?php
 foreach ($käufer as $data_item){
  echo '
-     <div>
+     <div class="container">
+     
       <div class="card bg-dark text-white"" id="entry'. $data_item['KID'] .'" >
         
           
@@ -24,23 +25,38 @@ foreach ($käufer as $data_item){
                <p class="card-text" data-content="'.$data_item["Name"].'">'.$data_item["Name"].'</p>
                <p class="card-text" data-content="'.$data_item["Adresse"].'">'.$data_item["Adresse"].'</p>
 
+               </div>
+            
+               </div>
+               <div class="pt-3">
+               </div>
+
+               <div class="row">
+
                ';
                foreach ($kauf as $data){
                     if ($data['KID']=$data_item['KID']){
-                         echo '<p class="card-text" data-content="'.$data["PID"].'">PID: '.$data["PID"].'</p>';
-                         echo '<p class="card-text" data-content="'.$data["Name"].'">'.$data["Name"].'</p>';
-                         echo '<p class="card-text" data-content="'.$data["Beschreibung"].'">'.$data["Beschreibung"].'</p>';
-                         echo '<p class="card-text" data-content="'.$data["Preis"].'">'.$data["Preis"].'</p>';
+                         echo'
+                         <div class="col-sm-6">
+                         <div class="card bg-dark text-white">
+                         <div class="card-body">
+                         <p class="card-text" data-content="'.$data["PID"].'">PID: '.$data["PID"].'</p>
+                         <p class="card-text" data-content="'.$data["Name"].'">'.$data["Name"].'</p>
+                         <p class="card-text" data-content="'.$data["Preis"].'">'.$data["Preis"].'</p>
+                         </div>  
+                         </div>
+                         <div class="pt-1">
+                         </div> 
+                         </div>
+                         
+                         ';
                     }
                }
                echo '
-             
-          </div>
-            
-      </div>
-      <div class="pt-3">
-      </div>
-     </div>';
+             </div>
+             <div class="pt-5">
+               </div>
+         ';
      }
 ?>
 </body>
