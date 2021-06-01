@@ -17,12 +17,7 @@ class käufe_model extends CI_Model {
     }
 
     public function get_kauf_info(){
-        $this->db->select('*');
-        $this->db->from('Kaufprodukte');
-        //$this->db->join('Produkte', 'Kaufprodukte.PID=Produkte.PID', 'left');
-        //$this->db->where('KID', $data);
-        //$result = $this->db->get();
-        $result = $this->db->query('SELECT * FROM Kaufprodukte JOIN Produkte ON Kaufprodukte.PID = Produkte.PID');
+        $result = $this->db->query('SELECT * FROM Kaufprodukte LEFT JOIN Produkte ON Kaufprodukte.PID = Produkte.PID');
         return $result->result_array();
        
     }

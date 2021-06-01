@@ -37,10 +37,9 @@ foreach ($käufer as $data_item){
                <div class="row">
 
                ';
-               print_r($kauf);
                foreach ($kauf as $data){
                     
-                    if ($data['KID']=$data_item['KID']){
+                    if ($data['KID']==$data_item['KID']){
                          echo'
                          <div class="col-sm-6">
                            <div class="card bg-dark text-white">
@@ -56,8 +55,6 @@ foreach ($käufer as $data_item){
                          </div>
                          
                          ';
-                         print_r($data);
-                         print_r($data_item);
                     }
                     
                
@@ -69,10 +66,7 @@ foreach ($käufer as $data_item){
        </div>
                
      '; 
-    
- }
-print_r($käufer);
- print_r($kauf);     
+}   
 ?>
 </body>
 </html>
