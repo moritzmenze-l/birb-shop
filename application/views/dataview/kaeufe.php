@@ -12,6 +12,8 @@
 
 
 <?php
+
+
 foreach ($käufer as $data_item){
  echo '
      <div class="container">
@@ -24,6 +26,7 @@ foreach ($käufer as $data_item){
                <p class="card-text" data-content="'.$data_item["Vorname"].'">'.$data_item["Vorname"].'</p>
                <p class="card-text" data-content="'.$data_item["Name"].'">'.$data_item["Name"].'</p>
                <p class="card-text" data-content="'.$data_item["Adresse"].'">'.$data_item["Adresse"].'</p>
+               <p class="card-text" data-content="'.$data_item["KID"].'">'.$data_item["KID"].'</p>
 
                </div>
             
@@ -34,30 +37,42 @@ foreach ($käufer as $data_item){
                <div class="row">
 
                ';
+               print_r($kauf);
                foreach ($kauf as $data){
+                    
                     if ($data['KID']=$data_item['KID']){
                          echo'
                          <div class="col-sm-6">
-                         <div class="card bg-dark text-white">
-                         <div class="card-body">
-                         <p class="card-text" data-content="'.$data["PID"].'">PID: '.$data["PID"].'</p>
-                         <p class="card-text" data-content="'.$data["Name"].'">'.$data["Name"].'</p>
-                         <p class="card-text" data-content="'.$data["Preis"].'">'.$data["Preis"].'</p>
-                         </div>  
-                         </div>
-                         <div class="pt-1">
-                         </div> 
+                           <div class="card bg-dark text-white">
+                            <div class="card-body">
+                             <p class="card-text" data-content="'.$data["PID"].'">PID: '.$data["PID"].'</p>
+                             <p class="card-text" data-content="'.$data["Name"].'">'.$data["Name"].'</p>
+                             <p class="card-text" data-content="'.$data["Preis"].'">'.$data["Preis"].'</p>
+                             <p class="card-text" data-content="'.$data["KID"].'">'.$data["KID"].'</p>
+                            </div>  
+                           </div>
+                           <div class="pt-1">
+                           </div> 
                          </div>
                          
                          ';
+                         print_r($data);
+                         print_r($data_item);
                     }
+                    
+               
                }
-               echo '
-             </div>
-             <div class="pt-5">
+     echo ' 
                </div>
-         ';
-     }
+     </div>
+       <div class="pt-5">
+       </div>
+               
+     '; 
+    
+ }
+print_r($käufer);
+ print_r($kauf);     
 ?>
 </body>
 </html>
