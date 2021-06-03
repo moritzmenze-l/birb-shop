@@ -15,7 +15,7 @@ $(document).ready(function(e){
 $("#kaufen").click(function(){
 
  
-     var func = "<?php echo site_url("kaufen/create"); ?>";
+     var func = "<?php echo site_url("Kaufen/create"); ?>";
      console.log("test")
   
 
