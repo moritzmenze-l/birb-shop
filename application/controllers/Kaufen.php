@@ -5,11 +5,7 @@ class Kaufen extends CI_Controller {
         $this->load->model('Kaufen_model');
         }
 
-        
-
-        // $this->load->library('template');
-        // $this->template->set('title', ucfirst($page));
-        // $this->template->load('basic_template','dataview/'.$page,$data);        
+            
     
     public function create(){
         $nachname = $this->input->post('nachname');
@@ -25,7 +21,10 @@ class Kaufen extends CI_Controller {
            $_SESSION['warenkorb'] = array();
         }
 
-        redirect("/");
+        echo "<script>
+        alert('Kauf erfolgreich abgeschlossen');
+        window.location.href='/';
+        </script>";
     }
     
 }
