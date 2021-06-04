@@ -5,18 +5,27 @@ class Kaufen extends CI_Controller {
         $this->load->model('Kaufen_model');
         }
 
+        
 
-        $data["content"] = $this->Kaufen_model->get_data();
-        $this->load->library('template');
-        $this->template->set('title', ucfirst($page));
-        $this->template->load('basic_template','dataview/'.$page,$data);        
+        // $this->load->library('template');
+        // $this->template->set('title', ucfirst($page));
+        // $this->template->load('basic_template','dataview/'.$page,$data);        
     
     public function create(){
-     $nachname = $this->input->post('nachname');
-     $vorname = $this->input->post('vorname');
-     $adresse = $this->input->post('adresse');
-     $id = $this->Kaufen_model->create($nachname,$vorname,$adresse);
-     echo $id;
+        $nachname = $this->input->post('nachname');
+        $vorname = $this->input->post('vorname');
+        $adresse = $this->input->post('adresse');
+        $this->Kaufen_model->create($nachname,$vorname,$adresse);
+
+        $kids = $this->Kaufen_model->getKid($nachname,$vorname,$adresse);
+
+        $this->Kaufen_model->savekauf($kids[0]['KID']);
+
+        if (isset($_SESSION['warenkorb'])){
+           $_SESSION['warenkorb'] = array();
+        }
+
+        redirect("/");
     }
     
 }
