@@ -1,4 +1,11 @@
 
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+</script>
 
 <?php
 $target_dir = "bilder/";
@@ -48,5 +55,17 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
+
 ?>
+
+
+
+
+<form action="\" method="post" class="form-inline my-2 my-lg-0">
+<input name="pid" type="hidden" value="'.$data_item['PID'].'">
+  <button id="kaufen" type="submit" class="btn btn-success my-2 my-sm-0">Zurück</button>
+</form>
+
+</body>
+</html>
 

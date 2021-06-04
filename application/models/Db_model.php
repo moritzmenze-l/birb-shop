@@ -15,6 +15,11 @@ class Db_model extends CI_Model {
    return $this->db->insert_id();
    }
 
+ public function image($bild){
+   $this->db->set('Bild', $bild);
+   $this->db->insert('Produkte');
+ }
+
 public function delete($id){
     $this->db->where('PID', intval($id));
     $this->db->delete('Produkte');

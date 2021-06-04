@@ -20,13 +20,14 @@ $(document).ready(function(e){
 
   $("#submit").click(function(){
   
-    if($("#id").val()!=""){
+    if($("#updateid").val()!=""){
+      //console.log("testup");
        var func = "<?php echo site_url("db/update"); ?>";
-       console.log($("#id").val());
+       console.log($("#updateid").val());
     }
     else{
        var func = "<?php echo site_url("db/create"); ?>";
-       console.log("test")
+       console.log("test");
     }
 
    $.ajax({
@@ -55,19 +56,49 @@ $(document).ready(function(e){
     });
    $(".edit").click(function(){
           var id = $(this).data("id");
-          //alert("EDIT " + id);
+          alert("EDIT " + id);
           console.log($(this).closest('.card-header').data("headline"));
           // for debug-console
           console.log($(this).parent().next().find("p").data("content"));
           // for debug-console
-          $("#headline").val($(this).closest('.card-header').data("headline"));
-          $("#content").val($(this).parent().parent().next().find("p").data("content"));
-          $("#id").val(id);
+          $("#updateheadline").val($(this).closest('.card-header').data("headline"));
+          $("#updatecontent").val($(this).parent().parent().next().find("p").data("content"));
+          $("#updateid").val(id);
      });
 
 });
 
 </script>
+
+<style>
+  input[type=submit] {
+  background-color: #007BFF;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  }
+  
+  input[type="file"] {
+  display: none;
+  } 
+
+  .custom-file-upload {
+  background-color: #007BFF;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  display: inline-block;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  }
+</style>
+
 <div class="container">
  <?php   
     foreach ($content as $data_item){
@@ -81,12 +112,12 @@ $(document).ready(function(e){
       }
       else{
         $is_admin = '
-        <div class="d-flex flex-row-reverse">
+          <div class="d-flex flex-row-reverse">
           <form action="/warenkorb/add" method="post" class="form-inline my-2 my-lg-0">
           <input name="pid" type="hidden" value="'.$data_item['PID'].'">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Kaufen</button>
           </form>
-        </div>
+        </div>  
         ';
       }
 
@@ -126,40 +157,52 @@ $(document).ready(function(e){
          <form  id="myForm">
           <div class="form-group">
             <label for="exampleFormControlInput1 myForm">Name</label>
-            <input type="Name" class="form-control" id="headline" placeholder="Produkt Name" name="headline">
+            <input type="Name" class="form-control" id="updateheadline" placeholder="Produkt Name" name="headline">
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlTextarea1 myForm">Beschreibung</label>
-            <input type="Beschreibung" textarea class="form-control" id="content" rows="3" name="content"></textarea>
+            <input type="Beschreibung" textarea class="form-control" id="updatecontent" rows="3" name="content"></textarea>
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlTextarea1 myForm">Preis</label>
-            <input type="Preis" textarea class="form-control" id="preis" rows="3" name="preis"></textarea>
+            <input type="Preis" textarea class="form-control" id="updatepreis" rows="3" name="preis"></textarea>
           </div>
 
-          <input type="hidden" id="id" name="PID" value="" class="form-control">
+          <input type="hidden" id="updateid" name="PID" value="" class="form-control">
           <button id="submit" type="button" class="btn btn-primary">Submit</button>
         </form> 
         </div>
-       </div>
+       
        <div class="pt-3">
        </div>
-      
+       
+       <div class="card px-4 pt-1 pb-3 bg-dark text-white">
 
+       <div class="pt-3">
+       </div>
+       
             <!DOCTYPE html>
        <html>
        <body>
 
         <form action="data/upload" method="post" enctype="multipart/form-data">
-        Select image to upload:
+        Wählen Sie ein Bild zum hochladen:
+        <label for="fileToUpload" class="custom-file-upload">
+        Bild auswählen
         <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
-      </form>
+        </label>
+        <input type="submit" value="Bild hochladen" name="submit">
+        </form>
 
       </body>
       </html>
+      </div>
+      </div>
+      <div class="pt-3">
+      </div>
+
       ';
 
   }

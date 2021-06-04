@@ -38,8 +38,14 @@ class Database extends CI_Controller {
     echo $id;
     }
 
+ public function image(){
+        $bild = $this->input->post('bild');
+        
+        
+        }
+
     
-public function delete(){
+ public function delete(){
     $id = $this->input->post('id');
      $this->Db_model->delete($id);
      }
