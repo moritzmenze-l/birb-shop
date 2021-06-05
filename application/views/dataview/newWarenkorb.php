@@ -10,6 +10,7 @@
 
      
 <?php
+// Die Buttons um zu Kaufen und den gesamten Warenkorb zu leeren sollen nur sichtbar sein, wenn im Warenkorb auch etwas drin ist. -Moritz
 if(!empty($_SESSION['warenkorb'])){?>
 <form action="/data/kaufen" method="post" class="form-inline my-2 my-lg-0">
 <input name="pid" type="hidden" value="'.$data_item['PID'].'">
@@ -18,7 +19,7 @@ if(!empty($_SESSION['warenkorb'])){?>
 
 <form action="/warenkorb/del" method="post" class="form-inline my-2 my-lg-0">
 <input name="pid" type="hidden" value="'.$data_item['PID'].'">
-  <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Warenkorb löschen</button>
+  <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Warenkorb leeren</button>
 </form>
 <?php } ?>
 

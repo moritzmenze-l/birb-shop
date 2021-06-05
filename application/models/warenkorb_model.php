@@ -6,6 +6,7 @@ class Warenkorb_model extends CI_Model {
         $this->load->database();
     }
 
+    // gibt alle Informationen des Produktes mit der übergebenen PID als array aus.
     public function get_produkt_info($data){
         $this->db->select('PID');
         $this->db->select('Name');
@@ -18,4 +19,5 @@ class Warenkorb_model extends CI_Model {
        
     }
 }
+// -Moritz
 ?>
