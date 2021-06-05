@@ -13,7 +13,7 @@
 
 <?php
 
-
+// geht alle Käufe durch
 foreach ($käufer as $data_item){
  echo '
      <div class="container">
@@ -37,8 +37,12 @@ foreach ($käufer as $data_item){
                <div class="row">
 
                ';
+               // geht pro kauf alle gekauften Produkte durch, indem:
+
+               // erstmal alle Produkte durchgegangen werden, da das array $kauf alle gekauften Produkte enthält
                foreach ($kauf as $data){
                     
+                    // und das Produkt aber nur angezeigt wird, wenn die KID der des Kaufs entspricht
                     if ($data['KID']==$data_item['KID']){
                          echo'
                          <div class="col-sm-6">
@@ -66,12 +70,17 @@ foreach ($käufer as $data_item){
        </div>
                
      '; 
+<<<<<<< HEAD
 }
 
 $bild = $_SESSION['bild'];
   
   echo $bild;  
 
+=======
+}   
+// -Moritz
+>>>>>>> 5bc1b6997e6519aee460bcf2a68634ac8412bb36
 ?>
 </body>
 </html>

@@ -21,7 +21,7 @@ $(document).ready(function(e){
   $("#submit").click(function(){
   
     if($("#updateid").val()!=""){
-      //console.log("testup");
+      console.log("testup");
        var func = "<?php echo site_url("db/update"); ?>";
        console.log($("#updateid").val());
     }

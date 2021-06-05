@@ -9,9 +9,13 @@ class Warenkorb extends CI_Controller{
     }
 
     public function index(){
+        // initialisiert den Warenkorb als leeres Array, falls noch nicht geschehen
         if (!isset($_SESSION['warenkorb'])){
             $_SESSION['warenkorb'] = array();
         }
+
+        /* In der Sessionvariable sind nur die PIDs der Produkte gespeichert.
+        Hier werden nun die gesamten Produktinformationen der Produkte im Warenkorb für die view zugänglich gemacht */
         $data['contents'] = array();
         foreach($_SESSION['warenkorb'] as $item){
             $result = $this->warenkorb_model->get_produkt_info($item);
@@ -19,27 +23,27 @@ class Warenkorb extends CI_Controller{
 
         }
 
+        // lädt die zum controller gehörige view
         $this->load->library('template');
         $this->template->set('title', "Warenkorb");
         $this->template->load('basic_template','dataview/newWarenkorb',$data);
     }
     
     function add(){
+        /* Definiert den Warenkorb als leeres Array, falls noch nicht geschehen,
+        da man schon Kaufen kann, bevor der Warenkorb geöffnet wurde, also die index-Funktion gelaufen ist.*/
         if (!isset($_SESSION['warenkorb'])){
             $_SESSION['warenkorb'] = array();
         }
         
-        echo $_POST["pid"];
+        // fügt die PID des entsprechenden Produkts in die Sessionvariable ein
         array_push($_SESSION['warenkorb'], $_POST["pid"]);
         redirect("/");
     }
-    function test(){
-        $_SESSION['warenkorb'] = array("test1", "test2");
-        array_push($_SESSION['warenkorb'], "test123434");
-
-    }
+    
 
     function del(){
+        // leert den Warenkorb, indem er neu definiert wird
         if (isset($_SESSION['warenkorb'])){
             $_SESSION['warenkorb'] = array();
         }
@@ -47,10 +51,6 @@ class Warenkorb extends CI_Controller{
     }
 
     function remove(){
-        
-        print_r($_SESSION['warenkorb']);
-        print_r($_POST["pid"]);
-
         if (($key = array_search($_POST["pid"], $_SESSION['warenkorb'])) !== false) {
             unset($_SESSION['warenkorb'][$key]);
         }
@@ -58,3 +58,4 @@ class Warenkorb extends CI_Controller{
         redirect("warenkorb");
     }
 }
+// -Moritz

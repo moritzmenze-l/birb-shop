@@ -8,31 +8,7 @@
      <center> <font color=32383E> <h1>Persönliche Daten</h1> </font> </center>
      <br>
      
-<script>
 
-$(document).ready(function(e){
-
-$("#kaufen").click(function(){
-
- 
-     var func = "<?php echo site_url("Kaufen/create"); ?>";
-     console.log("test")
-  
-
- $.ajax({
-    type:"POST",
-    url: func,
-    data:$("#myForm").serialize(),
-    success: function (response) {
-            $("#myForm").trigger("reset");
-            window.location.reload();
-     }
-  });
-});
-});
-
-
-</script>
    
     
 
@@ -43,7 +19,7 @@ $("#kaufen").click(function(){
     
   <div class="container">
    <div class="card px-4 pt-1 pb-3 bg-dark text-white">
-    <form  id="myForm">
+    <form  id="myForm" action="'.site_url("Kaufen/create").'" method="post">
       <div class="form-group">
         <label for="exampleFormControlInput1 myForm">Vorname</label>
         <input type="Name" class="form-control" id="updateheadline" placeholder="Max" name="vorname">
@@ -60,7 +36,7 @@ $("#kaufen").click(function(){
     </div>
 
       <input type="hidden" id="updateid" name="id" value="" class="form-control">
-      <button id="kaufen" type="button" class="btn btn-success">Kauf abschließen</button>
+      <button id="kaufen" type="submit" class="btn btn-success">Kauf abschließen</button>
     </form> 
    </div>
    </div>
