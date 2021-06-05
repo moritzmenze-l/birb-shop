@@ -70,17 +70,8 @@ foreach ($käufer as $data_item){
        </div>
                
      '; 
-<<<<<<< HEAD
-}
-
-$bild = $_SESSION['bild'];
-  
-  echo $bild;  
-
-=======
 }   
 // -Moritz
->>>>>>> 5bc1b6997e6519aee460bcf2a68634ac8412bb36
 ?>
 </body>
 </html>

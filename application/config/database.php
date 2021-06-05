@@ -75,11 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-<<<<<<< HEAD
 	'hostname' => 'sqlite:D:\Informatik projekt\birb-shop\assets\db\mydata.db', 
-=======
-	'hostname' => 'sqlite:K:\birb-shop\assets\db\mydata.db', 
->>>>>>> 5bc1b6997e6519aee460bcf2a68634ac8412bb36
 	'username' => '',
 	'password' => '',
 	'database' => '',
