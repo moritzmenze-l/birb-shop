@@ -188,7 +188,7 @@ $(document).ready(function(e){
        <body>
 
         <form action="data/upload" method="post" enctype="multipart/form-data">
-        Wählen Sie ein Bild zum hochladen:
+        Fügen Sie Ihrem Produkt ein Bild hinzu:
         <label for="fileToUpload" class="custom-file-upload">
         Bild auswählen
         <input type="file" name="fileToUpload" id="fileToUpload">
@@ -205,9 +205,18 @@ $(document).ready(function(e){
 
       ';
 
+     
+       
+      
+      
+
   }
 
+  
+
+
   ?>
+
 
 
  </body>

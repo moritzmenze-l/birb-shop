@@ -3,14 +3,16 @@ class Kaufen extends CI_Controller {
     function __construct(){
         parent::__construct(); // calls the super constructor
         $this->load->model('Kaufen_model');
-        }
+    }
 
 
-        $data["content"] = $this->Kaufen_model->get_data();
-        $this->load->library('template');
-        $this->template->set('title', ucfirst($page));
-        $this->template->load('basic_template','dataview/'.$page,$data);        
+    $data["content"] = $this->Kaufen_model->get_data();
+    $this->load->library('template');
+    $this->template->set('title', ucfirst($page));
+    $this->template->load('basic_template','dataview/'.$page,$data);        
     
+    // nachname, vorname und adresse werden an das Kaufen_model weitergegeben. -Maite
+        
     public function create(){
      $nachname = $this->input->post('nachname');
      $vorname = $this->input->post('vorname');

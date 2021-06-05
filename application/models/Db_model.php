@@ -17,7 +17,8 @@ class Db_model extends CI_Model {
 
  public function image($bild){
    $this->db->set('Bild', $bild);
-   $this->db->insert('Produkte');
+   //$this->db->where('PID');
+   $this->db->update('Produkte');
  }
 
 public function delete($id){

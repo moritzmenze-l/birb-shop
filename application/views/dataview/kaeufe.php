@@ -66,7 +66,12 @@ foreach ($käufer as $data_item){
        </div>
                
      '; 
-}   
+}
+
+$bild = $_SESSION['bild'];
+  
+  echo $bild;  
+
 ?>
 </body>
 </html>

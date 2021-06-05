@@ -67,6 +67,7 @@ $("#kaufen").click(function(){
    <div class="pt-3"> 
    </div>
   ';
+   
   
   ?>
 
