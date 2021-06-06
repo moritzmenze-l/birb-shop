@@ -179,10 +179,13 @@ if(!empty($session)){
         <button id="submit" type="button" class="btn btn-primary">Submit</button>
       </form> 
       </div>
-     
+    
+    ';
+    if($_SESSION["existpath"] == "false"){
+    echo '
      <div class="pt-3">
      </div>
-     
+    
      <div class="card px-4 pt-1 pb-3 bg-dark text-white">
 
      <div class="pt-3">
@@ -208,6 +211,9 @@ if(!empty($session)){
 
     </div>
     </div>
+    ';
+    };
+    echo '
     <div class="pt-3">
     </div>
 
