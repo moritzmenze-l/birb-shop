@@ -54,7 +54,7 @@ foreach ($käufer as $data_item){
                              <p class="card-text" data-content="'.$data["KID"].'">'.$data["KID"].'</p>
                             </div>  
                            </div>
-                           <div class="pt-1">
+                           <div class="pt-3">
                            </div> 
                          </div>
                          
