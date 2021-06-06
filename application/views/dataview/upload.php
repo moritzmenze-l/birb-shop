@@ -72,7 +72,7 @@ $_SESSION['bild'] = $bild;
 ?>
 
 <form action="/db/image" method="post" class="form-inline my-2 my-lg-0">
-   <button id="kaufen" type="submit" class="btn btn-success my-2 my-sm-0">Fertig</button>
+   <button id="kaufen" type="submit" class="btn btn-success my-2 my-sm-0">Dem Produkt hinzufügen</button>
 </form>
 
 </body>
