@@ -173,8 +173,8 @@ $(document).ready(function(e){
             <input type="Preis" textarea class="form-control" id="updatepreis" rows="3" name="preis"></textarea>
           </div>
 
-          './* Hier liegt Vermutlich der Fehler des Edit-Problems.
-          Bei name="PID" müsste vermutlich nicht "PID" sondern nur "id" stehen. */'
+          './* Hier liegt vermutlich der Fehler des Edit-Problems.
+          Bei name="PID" müsste nicht "PID" sondern nur "id" stehen. */'
           <input type="hidden" id="updateid" name="PID" value="" class="form-control">
           <button id="submit" type="button" class="btn btn-primary">Submit</button>
         </form> 

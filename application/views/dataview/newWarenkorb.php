@@ -9,12 +9,12 @@
      <br>
 
      
-<div class="container">
-<div class="card bg-dark">
-<div class="card-header">
 <?php
 // Die Buttons um zu Kaufen und den gesamten Warenkorb zu leeren sollen nur sichtbar sein, wenn im Warenkorb auch etwas drin ist. -Moritz
 if(!empty($_SESSION['warenkorb'])){?>
+<div class="container">
+<div class="card bg-dark">
+<div class="card-header">
 <form action="/data/kaufen" method="post" class="form-inline my-2 my-lg-0">
 <input name="pid" type="hidden" value="'.$data_item['PID'].'">
   <button id="kaufen" type="submit" class="btn btn-success my-2 my-sm-0">Kauf bestätigen</button>
