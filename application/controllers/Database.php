@@ -31,6 +31,7 @@ class Database extends CI_Controller {
  }
 
  public function create(){
+    
     $headline = $this->input->post('headline');
     $content = $this->input->post('content');
     $preis = $this->input->post('preis');
@@ -38,9 +39,13 @@ class Database extends CI_Controller {
     echo $id;
     }
 
+   
+
  public function image(){
-        $bild = $this->input->post('bild');
-        
+    $bild = $_SESSION['bild'];
+    $pids = $this->Db_model->getPID();
+    $this->Db_model->image($bild, $pids[0]['PID']);
+    redirect("/");   
         
         }
 
@@ -53,8 +58,9 @@ class Database extends CI_Controller {
  public function update(){
       $headline = $this->input->post('headline');
       $content = $this->input->post('content');
+      $preis = $this->input->post('preis');
       $id=$this->input->post('id');
-     $this->Db_model->update($id,$headline,$content);
+     $this->Db_model->update($id,$headline,$content,$preis);
     }
     
    

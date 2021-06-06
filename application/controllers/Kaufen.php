@@ -3,10 +3,12 @@ class Kaufen extends CI_Controller {
     function __construct(){
         parent::__construct(); // calls the super constructor
         $this->load->model('Kaufen_model');
-        }
+    }
 
             
     
+    // nachname, vorname und adresse werden an das Kaufen_model weitergegeben. -Maite
+        
     public function create(){
         // speichert die Daten des Käufers
         $nachname = $this->input->post('nachname');

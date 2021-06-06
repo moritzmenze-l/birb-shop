@@ -4,14 +4,17 @@
 <body>
 
 <script>
-
+     
+    
 </script>
 
 <?php
+
 $target_dir = "bilder/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -56,16 +59,23 @@ if ($uploadOk == 0) {
   }
 }
 
+$bild = '\bilder\\'.$_FILES["fileToUpload"]["name"];
+echo($bild);
+
+$_SESSION['bild'] = $bild;
+
+
+
+
+//redirect("/")
+
 ?>
 
-
-
-
-<form action="\" method="post" class="form-inline my-2 my-lg-0">
-<input name="pid" type="hidden" value="'.$data_item['PID'].'">
-  <button id="kaufen" type="submit" class="btn btn-success my-2 my-sm-0">Zurück</button>
+<form action="/db/image" method="post" class="form-inline my-2 my-lg-0">
+   <button id="kaufen" type="submit" class="btn btn-success my-2 my-sm-0">Dem Produkt hinzufügen</button>
 </form>
 
 </body>
 </html>
+
 

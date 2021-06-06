@@ -15,9 +15,15 @@ class Db_model extends CI_Model {
    return $this->db->insert_id();
    }
 
- public function image($bild){
+public function getPID(){
+  $result = $this->db->query('SELECT PID FROM Produkte ORDER BY PID DESC');
+  return $result->result_array();
+}
+
+ public function image($bild,$PID){
    $this->db->set('Bild', $bild);
-   $this->db->insert('Produkte');
+   $this->db->where('PID', $PID);
+   $this->db->update('Produkte');
  }
 
 public function delete($id){
@@ -25,10 +31,11 @@ public function delete($id){
     $this->db->delete('Produkte');
       }
 
-public function update($id, $headline, $content)
+public function update($id, $headline, $content, $preis)
    {
     $this->db->set('Name', $headline);
     $this->db->set('Beschreibung', $content);
+    $this->db->set('Preis', $preis);
     $this->db->where('PID', intval($id));
     $this->db->update('Produkte');
    }
