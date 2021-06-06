@@ -115,7 +115,7 @@ $(document).ready(function(e){
           <div class="d-flex flex-row-reverse">
           <form action="/warenkorb/add" method="post" class="form-inline my-2 my-lg-0">
           <input name="pid" type="hidden" value="'.$data_item['PID'].'">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Kaufen</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Zum Warenkorb hinzufügen</button>
           </form>
         </div>  
         ';

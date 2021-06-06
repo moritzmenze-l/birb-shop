@@ -9,6 +9,9 @@
      <br>
 
      
+<div class="container">
+<div class="card bg-dark">
+<div class="card-header">
 <?php
 // Die Buttons um zu Kaufen und den gesamten Warenkorb zu leeren sollen nur sichtbar sein, wenn im Warenkorb auch etwas drin ist. -Moritz
 if(!empty($_SESSION['warenkorb'])){?>
@@ -23,7 +26,12 @@ if(!empty($_SESSION['warenkorb'])){?>
 </form>
 <?php } ?>
 
+</div>
+</div>
 <br>
+
+</div>
+
 
 <div class="container">
 <?php
@@ -35,12 +43,12 @@ foreach ($contents as $item){
        
             <div class="card-header" data-headline="'.$data_item["Name"].'">
             
-            <h5>'.$data_item ["Name"].'
+            <h5>'.$data_item ["Name"].'</h5>
             <form action="/warenkorb/remove" method="post" class="form-inline my-2 my-lg-0">
             <input name="pid" type="hidden" value="'.$data_item['PID'].'">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Entfernen</button>
+              <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Entfernen</button>
             </form>
-            </h5>
+            
              
             </div>
            <div class="card-body">
