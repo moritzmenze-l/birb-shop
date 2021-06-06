@@ -31,14 +31,14 @@ public function delete($id){
     $this->db->delete('Produkte');
       }
 
-public function update($id, $headline, $content, $preis)
+/*public function update($id, $headline, $content, $preis)
    {
     $this->db->set('Name', $headline);
     $this->db->set('Beschreibung', $content);
     $this->db->set('Preis', $preis);
     $this->db->where('PID', intval($id));
     $this->db->update('Produkte');
-   }
+   }*/
       
    
 }

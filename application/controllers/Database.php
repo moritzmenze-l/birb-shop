@@ -55,13 +55,13 @@ class Database extends CI_Controller {
      $this->Db_model->delete($id);
      }
         
- public function update(){
+ /*public function update(){
       $headline = $this->input->post('headline');
       $content = $this->input->post('content');
       $preis = $this->input->post('preis');
       $id=$this->input->post('id');
      $this->Db_model->update($id,$headline,$content,$preis);
-    }
+    }*/
     
    
 }

@@ -20,15 +20,15 @@ $(document).ready(function(e){
 
   $("#submit").click(function(){
   
-    if($("#updateid").val()!=""){
+    /*if($("#updateid").val()!=""){
       console.log("testup");
-       var func = "<?php echo site_url("db/update"); ?>";
+       var func = "<?php //echo site_url("db/update"); ?>";
        console.log($("#updateid").val());
     }
-    else{
+    else{*/
        var func = "<?php echo site_url("db/create"); ?>";
        console.log("test");
-    }
+    //}
 
    $.ajax({
       type:"POST",
@@ -54,7 +54,7 @@ $(document).ready(function(e){
        ,})
 
     });
-   $(".edit").click(function(){
+   /*$(".edit").click(function(){
           var id = $(this).data("id");
           alert("EDIT " + id);
           console.log($(this).closest('.card-header').data("headline"));
@@ -64,7 +64,7 @@ $(document).ready(function(e){
           $("#updateheadline").val($(this).closest('.card-header').data("headline"));
           $("#updatecontent").val($(this).parent().parent().next().find("p").data("content"));
           $("#updateid").val(id);
-     });
+     });*/
 
 });
 
@@ -109,7 +109,7 @@ $(document).ready(function(e){
       if(!empty($session)){
         $is_admin = '
         <div data-id=" '.$data_item['PID'].' " class="trash float-right" style="cursor:pointer"><i class="fas fa-trash"></i></div>
-        <div data-id=" '.$data_item['PID'].' " class="edit float-right" style="cursor:pointer"><i class="fas fa-edit"></i></div>
+        './*<div data-id=" '.$data_item['PID'].' " class="edit float-right" style="cursor:pointer"><i class="fas fa-edit"></i></div>*/'
         <h6 class="card-subtitle mb-2 text-muted">'.$data_item["PID"].'</h6>
         ';
       }
@@ -173,6 +173,8 @@ $(document).ready(function(e){
             <input type="Preis" textarea class="form-control" id="updatepreis" rows="3" name="preis"></textarea>
           </div>
 
+          './* Hier liegt Vermutlich der Fehler des Edit-Problems.
+          Bei name="PID" müsste vermutlich nicht "PID" sondern nur "id" stehen. */'
           <input type="hidden" id="updateid" name="PID" value="" class="form-control">
           <button id="submit" type="button" class="btn btn-primary">Submit</button>
         </form> 
