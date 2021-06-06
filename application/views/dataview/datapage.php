@@ -99,8 +99,11 @@ $(document).ready(function(e){
   }
 </style>
 
+
+
 <div class="container">
- <?php   
+ <?php  
+    
     foreach ($content as $data_item){
       $session = $this->session->userdata('id_user');
       if(!empty($session)){
@@ -132,10 +135,10 @@ $(document).ready(function(e){
             </div>
            <div class="card-body">
            <div class="d-flex justify-content-center">
-              <img src="'.$data_item["Bild"].'" class="rounded" alt="Produktbild" style="width:50%">
+              <img src="'.$data_item["Bild"].'" class="img-fluid" alt="Produktbild" style="width:50%">
             </div>
               <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
-              <p class="card-text" data-preis="'.$data_item["Preis"].'">'.$data_item["Preis"].'</p>
+              <p class="card-text" data-preis="'.$data_item["Preis"].'">'.$data_item["Preis"].'€</p>
              
              </div>
             
@@ -153,7 +156,7 @@ $(document).ready(function(e){
     echo' 
        <div class="container">
        
-        <div class="card px-4 pt-1 pb-3 bg-dark text-white">
+        <div class="card px-4 pt-3 pb-3 bg-dark text-white">
          <form  id="myForm">
           <div class="form-group">
             <label for="exampleFormControlInput1 myForm">Name</label>
@@ -182,13 +185,14 @@ $(document).ready(function(e){
 
        <div class="pt-3">
        </div>
+ 
        
             <!DOCTYPE html>
        <html>
        <body>
 
         <form action="data/upload" method="post" enctype="multipart/form-data">
-        Wählen Sie ein Bild zum hochladen:
+        Fügen Sie Ihrem Produkt ein Bild hinzu:
         <label for="fileToUpload" class="custom-file-upload">
         Bild auswählen
         <input type="file" name="fileToUpload" id="fileToUpload">
@@ -198,6 +202,8 @@ $(document).ready(function(e){
 
       </body>
       </html>
+
+
       </div>
       </div>
       <div class="pt-3">
@@ -205,9 +211,18 @@ $(document).ready(function(e){
 
       ';
 
+     
+       
+      
+      
+
   }
 
+  
+
+
   ?>
+
 
 
  </body>
