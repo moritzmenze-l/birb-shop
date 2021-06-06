@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <title>Login</title>
       <?php if(isset($_SESSION)) {
        echo $this->session->flashdata('flash_data');
        } ?>
