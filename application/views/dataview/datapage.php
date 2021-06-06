@@ -160,17 +160,17 @@ $(document).ready(function(e){
          <form  id="myForm">
           <div class="form-group">
             <label for="exampleFormControlInput1 myForm">Name</label>
-            <input type="Name" class="form-control" id="updateheadline" placeholder="Produkt Name" name="headline">
+            <input type="text" class="form-control" id="updateheadline" placeholder="Produkt Name" name="headline">
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlTextarea1 myForm">Beschreibung</label>
-            <input type="Beschreibung" textarea class="form-control" id="updatecontent" rows="3" name="content"></textarea>
+            <input type="text" textarea class="form-control" id="updatecontent" rows="3" name="content"></textarea>
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlTextarea1 myForm">Preis</label>
-            <input type="Preis" textarea class="form-control" id="updatepreis" rows="3" name="preis"></textarea>
+            <label for="exampleFormControlTextarea1 myForm">Preis in €</label>
+            <input type="number" textarea class="form-control" id="updatepreis" rows="3" name="preis"></textarea>
           </div>
 
           './* Hier liegt vermutlich der Fehler des Edit-Problems.
