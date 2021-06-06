@@ -181,6 +181,7 @@ if(!empty($session)){
       </div>
     
     ';
+    // Die Option, ein Bild einzustellen soll nur möglich sein, wenn der letzte Eintrag noch kein Bild hat
     if($_SESSION["existpath"] == "false"){
     echo '
      <div class="pt-3">

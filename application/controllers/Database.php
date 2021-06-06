@@ -18,6 +18,8 @@ class Database extends CI_Controller {
         }
         else
         {    
+            /* Es wird überprüft, ob der letzte Eintrag in "Produkte" ein Bild hat,
+            damit das einstellen eines Bildes nur erlaubt ist, wenn dem nicht so ist. */
             $path = $this->Db_model->getPath();
             $_SESSION["existpath"] = "false";
             if ($path[0]['Bild'] != ""){
