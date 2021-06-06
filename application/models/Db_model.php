@@ -40,5 +40,9 @@ public function delete($id){
     $this->db->update('Produkte');
    }*/
       
+  public function getPath(){
+    $result = $this->db->query('SELECT Bild FROM Produkte ORDER BY PID DESC');
+    return $result->result_array();
+  }
    
 }

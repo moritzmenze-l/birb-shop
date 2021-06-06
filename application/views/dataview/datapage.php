@@ -180,6 +180,9 @@ $(document).ready(function(e){
         </form> 
         </div>
        
+       ';
+       if($_SESSION["existpath"] == "false"){
+       echo '
        <div class="pt-3">
        </div>
        
@@ -208,6 +211,9 @@ $(document).ready(function(e){
 
       </div>
       </div>
+      ';
+      };
+      echo '
       <div class="pt-3">
       </div>
 

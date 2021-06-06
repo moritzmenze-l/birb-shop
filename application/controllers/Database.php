@@ -6,29 +6,33 @@ class Database extends CI_Controller {
         }
     
 
-    public function mydata($page = "datapage")
- {
-    if ( ! file_exists(APPPATH.'views/dataview/'.$page.'.php'))
-          {
-              show_404();
-          }
-    else
-     {    
 
+        
+    
+
+    public function index($page = "datapage")
+    {
+        if ( ! file_exists(APPPATH.'views/dataview/'.$page.'.php'))
+        {
+              show_404();
+        }
+        else
+        {    
+            $path = $this->Db_model->getPath();
+            $_SESSION["existpath"] = "false";
+            if ($path[0]['Bild'] != ""){
+            $_SESSION["existpath"] = "true";
+            }
+      
       
         
           $data["content"] = $this->Db_model->get_data();
           $this->load->library('template');
           $this->template->set('title', ucfirst($page));
           $this->template->load('basic_template','dataview/'.$page,$data);
+        }
 
-
-
-
- 
-       }
-      
- }
+    }
 
  public function create(){
     
