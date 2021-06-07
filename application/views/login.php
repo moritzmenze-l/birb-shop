@@ -72,7 +72,7 @@
       <h1>Login</h1>
         <form action="<?php site_url('login') ?>" method="post">
           <input type="text" id="login" name="username" placeholder="Username" required="required" />
-          <input type="text" id="password" name="password" placeholder="Password" required="required" />
+          <input type="password" id="password" name="password" placeholder="Password" required="required" />
           <button type="submit" class="btn btn-primary btn-block btn-large">Login</button>
         </form>
     </div>

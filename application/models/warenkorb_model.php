@@ -18,6 +18,7 @@ class Warenkorb_model extends CI_Model {
         return $result->result_array();
        
     }
+
 }
 // -Moritz
 ?>

@@ -17,11 +17,16 @@ class Warenkorb extends CI_Controller{
         /* In der Sessionvariable sind nur die PIDs der Produkte gespeichert.
         Hier werden nun die gesamten Produktinformationen der Produkte im Warenkorb für die view zugänglich gemacht */
         $data['contents'] = array();
+        $data['preis'] = 0;
         foreach($_SESSION['warenkorb'] as $item){
             $result = $this->warenkorb_model->get_produkt_info($item);
             array_push($data['contents'], $result);
 
+            //rechnet den Gesamtpreis aller Produkte im Warenkorb zusammen
+            $data['preis'] = $data['preis'] + $result[0]['Preis'];
         }
+
+
 
         // lädt die zum controller gehörige view
         $this->load->library('template');
