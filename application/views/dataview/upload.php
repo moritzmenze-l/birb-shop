@@ -59,13 +59,11 @@ if ($uploadOk == 0) {
   }
 }
 
-$bild = '\bilder\\'.$_FILES["fileToUpload"]["name"];
-echo($bild);
-
+$bild = $_FILES["fileToUpload"]["name"];
 $_SESSION['bild'] = $bild;
 
 
-
+//echo($bild);
 
 //redirect("/")
 

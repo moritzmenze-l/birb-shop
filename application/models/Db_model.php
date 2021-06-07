@@ -20,6 +20,12 @@ public function getPID(){
   return $result->result_array();
 }
 
+public function getBild($id){
+  $this->db->where('PID', intval($id));
+  $result = $this->db->get('Produkte');
+  return $result->result_array();
+}
+
  public function image($bild,$PID){
    $this->db->set('Bild', $bild);
    $this->db->where('PID', $PID);

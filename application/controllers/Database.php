@@ -51,7 +51,10 @@ class Database extends CI_Controller {
 
     
  public function delete(){
+
     $id = $this->input->post('id');
+    $name = $this->Db_model->getBild($id);
+    unlink("bilder\\".$name[0]['Bild']);
      $this->Db_model->delete($id);
      }
         
@@ -65,3 +68,4 @@ class Database extends CI_Controller {
     
    
 }
+

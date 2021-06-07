@@ -135,7 +135,7 @@ $(document).ready(function(e){
             </div>
            <div class="card-body">
            <div class="d-flex justify-content-center">
-              <img src="'.$data_item["Bild"].'" class="img-fluid" alt="Produktbild" style="width:50%">
+              <img src="\bilder\\'.$data_item["Bild"].'" class="img-fluid" alt="Produktbild" style="width:50%">
             </div>
               <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
               <p class="card-text" data-preis="'.$data_item["Preis"].'">'.$data_item["Preis"].'€</p>
@@ -151,7 +151,8 @@ $(document).ready(function(e){
   ?>
 </div>
 <?php
-  
+
+
   if(!empty($session)){
     echo' 
        <div class="container">
