@@ -10,7 +10,7 @@ class Search extends CI_Controller{
     
     public function search_input($page="searchpage"){
         
-        
+        //Übergibt der search()-Methode des Search_models den empfangenen input
         $search=$this->input->post('input');
         $data['search'] = $this->Search_model->search($search);
 

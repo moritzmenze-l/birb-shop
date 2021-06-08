@@ -11,9 +11,11 @@ class Login extends CI_Controller {
     public function view(){
 
          if($_POST){
-
+            // lässt das Login_model überprüfen, ob die durch die login-View übergebenen Daten zu einem Admin gehören
+            //Wenn dies nicht der Fall ist ist $result leer
             $result = $this->Login_model->check_user($_POST);
 
+            //überprüft, ob $result leer ist
             if(!empty($result)){
 
                 $data = array(
@@ -23,10 +25,12 @@ class Login extends CI_Controller {
                 );
 
                 $this->session->set_userdata($data);
-                redirect(''); // eure Datenseite !!!!!!!!!!!!!!!
-
+                redirect(''); 
+             //Benutzer wird angemeldet
             }
             else{
+
+              //Benutzer erhält eine Fehlermeldung
                 $this->session->set_flashdata('flash_data', 'Benutzername oder Passwort falsch');
                 redirect('Login/view');
             }
@@ -35,7 +39,7 @@ class Login extends CI_Controller {
         $this->load->view("login");
 
     }
-
+    //Meldet den Admin ab.
     public function logout() {
         $data = array('id_user', 'username');
         $this->session->unset_userdata($data);

@@ -15,7 +15,7 @@ shrink-to-fit=no">
  <script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
  <script src="<?php echo base_url('assets/js/fontawesome.min.js');?>"></script>
 
- 
+ <!-- Wirkt als eine Schablone für die anderen Seiten. Alle Seiten (bis auf die login-Seite) sind nach dem hier festgelegten Muster aufgebaut. -->
  <title>birb Shop</title>
  </head>
 

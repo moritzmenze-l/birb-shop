@@ -42,6 +42,7 @@ class Database extends CI_Controller {
 
     }
 
+    // übergibt dem Db_model die von der datapage empfangenen Daten
  public function create(){
     
     $headline = $this->input->post('headline');
@@ -51,7 +52,7 @@ class Database extends CI_Controller {
     echo $id;
     }
 
-   
+  //speichert den Bildnamen aus der session und fügt diesen dem Produkt mit der höchsten PID hinzu -Maite 
 
  public function image(){
     $bild = $_SESSION['bild'];
@@ -61,12 +62,13 @@ class Database extends CI_Controller {
         
         }
 
-    
+  //Empfängt die PID des zu löschenden Produkts und übergibt diese dem Db_model. 
+
  public function delete(){
 
     $id = $this->input->post('id');
-    $name = $this->Db_model->getBild($id);
-    unlink("bilder\\".$name[0]['Bild']);
+    $name = $this->Db_model->getBild($id); //übergibt die PID des zu löschenden Produkts an die getBild()-Methode und erhält ein Array mit Produktdaten des entsprechenden Produkts
+    unlink("bilder\\".$name[0]['Bild']); //löscht das Bild aus dem bilder-Ordner, welches zu dem zu löschenden Produkt gehört
      $this->Db_model->delete($id);
      redirect("/");
      }

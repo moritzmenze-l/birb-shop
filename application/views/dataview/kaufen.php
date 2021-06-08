@@ -13,7 +13,8 @@
     
 
 <?php
-  
+
+//Formular, in dem der Kunde seine persönlichen Daten angeben kann. Nutzt die create()-Methode des Kaufen-Controllers um Daen zu speichern. 
   
  echo' 
     
@@ -46,7 +47,7 @@
    
   
   ?>
-
+//Maite
 </body>
 </html>
   

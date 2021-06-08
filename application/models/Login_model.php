@@ -6,6 +6,7 @@ class Login_model extends CI_Model {
         $this->load->database();
     }
 
+   //gibt Benutzerdaten aus, die den empfangenen Daten entsprechen, sofern welche vorhanden sind 
    public function check_user($data){
 
        $this->db->where('Benutzername', $data['username']);

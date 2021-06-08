@@ -26,8 +26,7 @@ $(document).ready(function(e){
        console.log($("#updateid").val());
     }
     else{*/
-       var func = "<?php echo site_url("db/create"); ?>";
-       console.log("test");
+       var func = "<?php echo site_url("db/create"); ?>"; //ruft die Methode create() des Database-Controllers auf
     //}
 
    $.ajax({
@@ -70,7 +69,9 @@ $(document).ready(function(e){
 
 </script>
 
-<style>
+<style> 
+/* CSS um das Hochladen eines Bildes ästhetisch ansprechend zu gestalten -Maite */
+
   input[type=submit] {
   background-color: #007BFF;
   border: none;
@@ -103,7 +104,7 @@ $(document).ready(function(e){
 
 <div class="container">
  <?php  
-    
+    //Icon zum löschen von Produkten (Wird nur angezeigt, wenn ein Admin eingeloggt ist.)
     foreach ($content as $data_item){
       $session = $this->session->userdata('id_user');
       if(!empty($session)){
@@ -114,6 +115,7 @@ $(document).ready(function(e){
         ';
       }
       else{
+        //Knopf zum hinzufügen in den Warenkorb(Wird nur angezeigt, wenn ein Admin eingeloggt ist.)
         $is_admin = '
           <div class="d-flex flex-row-reverse">
           <form action="/warenkorb/add" method="post" class="form-inline my-2 my-lg-0">
@@ -123,7 +125,7 @@ $(document).ready(function(e){
         </div>  
         ';
       }
-
+ //Zeigt die Produkte in "cards" an
     echo '
     <div>
      <div class="card bg-dark text-white"" id="entry'. $data_item['PID'] .'" >
@@ -135,8 +137,12 @@ $(document).ready(function(e){
             </div>
            <div class="card-body">
            <div class="d-flex justify-content-center">
+              <div class="pt-3">
+              </div>
               <img src="\bilder\\'.$data_item["Bild"].'" class="img-fluid" alt="Produktbild" style="width:50%">
             </div>
+              <div class="pt-3">
+              </div>
               <p class="card-text" data-content="'.$data_item["Beschreibung"].'">'.$data_item["Beschreibung"].'</p>
               <p class="card-text" data-preis="'.$data_item["Preis"].'">'.$data_item["Preis"].'€</p>
              
@@ -152,7 +158,7 @@ $(document).ready(function(e){
 </div>
 <?php
 
-
+//Formular, mit dem der Admin ein neues Produkt erstellen kann.
   if(!empty($session)){
     echo' 
        <div class="container">
@@ -184,6 +190,8 @@ $(document).ready(function(e){
        ';
        // Die Option, ein Bild einzustellen soll nur möglich sein, wenn der letzte Eintrag noch kein Bild hat
        if($_SESSION["existpath"] == "false"){
+
+       //Formular zum hochladen von Bildern -Maite
        echo '
        <div class="pt-3">
        </div>
@@ -192,7 +200,7 @@ $(document).ready(function(e){
 
        <div class="pt-3">
        </div>
- 
+
        
             <!DOCTYPE html>
        <html>

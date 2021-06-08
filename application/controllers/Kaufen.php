@@ -10,7 +10,7 @@ class Kaufen extends CI_Controller {
     // nachname, vorname und adresse werden an das Kaufen_model weitergegeben. -Maite
         
     public function create(){
-        // speichert die Daten des Käufers
+        
         $nachname = $this->input->post('nachname');
         $vorname = $this->input->post('vorname');
         $adresse = $this->input->post('adresse');

@@ -13,7 +13,8 @@
 
 <script>
 
-
+//Entspricht der Datapage außer, dass sie nicht alle Produkte durchgeht, 
+//sondern nur die, in deren Name oder Beschreibung der gesuchte String vorkommt.
 
 
 $(document).ready(function(e){
