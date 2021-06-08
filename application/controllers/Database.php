@@ -18,6 +18,11 @@ class Database extends CI_Controller {
         }
         else
         {    
+            $data["content"] = $this->Db_model->get_data();
+
+            //Zur Error-Verhinderung, sollte kein Produkt existieren
+            if(!empty($data["content"])){
+
             /* Es wird überprüft, ob der letzte Eintrag in "Produkte" ein Bild hat,
             damit das einstellen eines Bildes nur erlaubt ist, wenn dem nicht so ist. */
             $path = $this->Db_model->getPath();
@@ -25,10 +30,11 @@ class Database extends CI_Controller {
             if ($path[0]['Bild'] != ""){
             $_SESSION["existpath"] = "true";
             }
-      
+
+            }
       
         
-          $data["content"] = $this->Db_model->get_data();
+          
           $this->load->library('template');
           $this->template->set('title', ucfirst($page));
           $this->template->load('basic_template','dataview/'.$page,$data);
